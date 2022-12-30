@@ -1,7 +1,6 @@
-use std::cmp::{max, min};
 use std::collections::{HashMap, HashSet};
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+
 use regex::Regex;
 
 const MINUTES: usize = 30;
@@ -30,7 +29,7 @@ fn dfs_1(
     valve_flow_rate_mapping: &HashMap<String, usize>,
     num_valves_with_flow: usize,
 ) {
-    let mut cur_pos_opened;
+    let cur_pos_opened;
     if opened_valves.contains(&pos) {
         cur_pos_opened = true;
     }
@@ -94,14 +93,14 @@ fn dfs_2(
     valve_flow_rate_mapping: &HashMap<String, usize>,
     num_valves_with_flow: usize,
 ) {
-    let mut cur_pos_opened;
+    let cur_pos_opened;
     if opened_valves.contains(&pos) {
         cur_pos_opened = true;
     }
     else {
         cur_pos_opened = false;
     }
-    let mut cur_epos_opened;
+    let cur_epos_opened;
     if opened_valves.contains(&epos) {
         cur_epos_opened = true;
     }

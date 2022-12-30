@@ -1,7 +1,8 @@
-use std::cmp::{max, min};
+use std::cmp::max;
 use std::collections::HashSet;
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+
+use anyhow::{Error, Result};
 use regex::Regex;
 
 #[derive(Debug)]

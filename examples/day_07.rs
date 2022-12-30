@@ -1,6 +1,5 @@
+use aoc_2022::day_07::{get_directory_layout, part_1, part_2};
 use aoc_2022::utils;
-use aoc_2022::day_07::{part_1, part_2, get_directory_layout};
-
 
 fn main() {
     let lines = utils::read_lines("inputs/day_07").unwrap();

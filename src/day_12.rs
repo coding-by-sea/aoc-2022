@@ -1,6 +1,4 @@
 use std::collections::{HashSet, VecDeque};
-use std::convert::From;
-use anyhow::{anyhow, Result, Error};
 
 const NUM_START: u8 = 83;
 const ELEVATION_START: u8 = 97;
@@ -33,7 +31,7 @@ pub fn part_1(grid: &Vec<Vec<u8>>) -> usize {
     queue.push_back((start_loc, 0));
     visited.insert(start_loc);
     loop {
-        let (curr, mut step) = queue.pop_front().unwrap();
+        let (curr, step) = queue.pop_front().unwrap();
         if curr == end_loc {
             return step;
         }
@@ -88,7 +86,7 @@ pub fn part_2(grid: &Vec<Vec<u8>>) -> u32 {
     queue.push_back((start_loc, 0));
     visited.insert(start_loc);
     loop {
-        let (curr, mut step) = queue.pop_front().unwrap();
+        let (curr, step) = queue.pop_front().unwrap();
         if grid[curr.0 as usize][curr.1 as usize] == NUM_START || grid[curr.0 as usize][curr.1 as usize] == ELEVATION_START {
             return step;
         }

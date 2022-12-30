@@ -1,6 +1,5 @@
+use aoc_2022::day_13::{parsing_packets, parsing_pairs, part_1, part_2};
 use aoc_2022::utils;
-use aoc_2022::day_13::{part_1, part_2, parsing_pairs, parsing_packets};
-
 
 fn main() {
     let lines = utils::read_lines("inputs/day_13").unwrap();

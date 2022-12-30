@@ -1,6 +1,5 @@
 use std::str::FromStr;
 
-
 pub fn part_1(lines: &Vec<String>) -> i32 {
     let mut maximum_calories = 0;
     let mut calories = 0;

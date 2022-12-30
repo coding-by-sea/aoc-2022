@@ -1,8 +1,6 @@
-use std::arch::x86_64::_mm_test_all_ones;
 use std::cell::{Cell, RefCell};
 use std::collections::VecDeque;
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
 
 #[derive(Debug, PartialEq, Clone)]
 pub struct Monkey {
@@ -24,7 +22,7 @@ impl Monkey {
         let num = usize::from_str(&monkey_num[0..(monkey_num.len() - 1)]).unwrap();
         // parsing starting items
         let mut starting_items = VecDeque::new();
-        let (_, mut items_str) = lines_iter.next().unwrap().split_once(":").unwrap();
+        let (_, items_str) = lines_iter.next().unwrap().split_once(":").unwrap();
         let items_str = items_str.trim();
         for item in items_str.split(", ") {
             starting_items.push_back(usize::from_str(item).unwrap());
@@ -32,8 +30,8 @@ impl Monkey {
         // parsing operation and operator
         let operator;
         let operation;
-        let (_, mut statement) = lines_iter.next().unwrap().split_once(":").unwrap();
-        let (_, mut expression) = statement.split_once(" = ").unwrap();
+        let (_, statement) = lines_iter.next().unwrap().split_once(":").unwrap();
+        let (_, expression) = statement.split_once(" = ").unwrap();
         if expression == "old * old" {
             operation = "^".to_string();
             operator = 2;

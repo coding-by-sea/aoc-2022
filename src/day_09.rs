@@ -1,6 +1,7 @@
-use std::str::FromStr;
 use std::collections::HashSet;
-use anyhow::{anyhow, Result, Error};
+use std::str::FromStr;
+
+use anyhow::{anyhow, Error, Result};
 
 #[derive(Debug, PartialEq)]
 enum Direction {

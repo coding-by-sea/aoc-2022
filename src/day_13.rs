@@ -1,5 +1,5 @@
 use std::cmp::{min, Ordering};
-use anyhow::{anyhow, Result, Error};
+
 use serde::Deserialize;
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize)]
@@ -49,11 +49,11 @@ impl Ord for PacketData {
                     return nums_left.len().cmp(&nums_right.len());
                 }
             }
-            (&PacketData::List(ref nums_left), &PacketData::Integer(ref num_right)) => {
+            (&PacketData::List(_), &PacketData::Integer(ref num_right)) => {
                 let right = PacketData::List(vec![PacketData::Integer(*num_right)]);
                 return self.cmp(&right);
             }
-            (&PacketData::Integer(ref num_left), &PacketData::List(ref nums_right)) => {
+            (&PacketData::Integer(ref num_left), &PacketData::List(_)) => {
                 let left = PacketData::List(vec![PacketData::Integer(*num_left)]);
                 return left.cmp(other);
             }

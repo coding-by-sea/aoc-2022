@@ -1,6 +1,5 @@
+use aoc_2022::day_09::{parsing, part_1, part_2};
 use aoc_2022::utils;
-use aoc_2022::day_09::{part_1, part_2, parsing};
-
 
 fn main() {
     let lines = utils::read_lines("inputs/day_09").unwrap();

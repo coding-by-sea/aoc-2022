@@ -1,6 +1,5 @@
+use aoc_2022::day_08::{get_cumulative_maxes, parsing, part_1, part_2};
 use aoc_2022::utils;
-use aoc_2022::day_08::{part_1, part_2, parsing, get_cumulative_maxes};
-
 
 fn main() {
     let lines = utils::read_lines("inputs/day_08").unwrap();

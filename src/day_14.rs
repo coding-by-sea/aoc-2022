@@ -1,6 +1,6 @@
 use std::cmp::{max, min};
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+
 const BORDER:i32 = -1;
 const EMPTY:i32 = 0;
 const ROCK:i32 = 1;

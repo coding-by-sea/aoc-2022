@@ -1,8 +1,7 @@
 use std::cell::Cell;
 use std::collections::HashMap;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
 
 #[derive(Debug, Default)]
 pub struct Node where {
@@ -34,7 +33,7 @@ impl Node {
 
 pub fn get_directory_layout(lines: &Vec<String>) -> HashMap<PathBuf, Node> {
     let mut path_node_map = HashMap::new();
-    let mut root: Node = Node {
+    let root: Node = Node {
         size: Cell::new(None),
         is_directory: true,
         path: PathBuf::from("/"),

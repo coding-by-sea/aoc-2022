@@ -1,5 +1,6 @@
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+
+use anyhow::{anyhow, Error, Result};
 
 #[derive(Debug, PartialEq)]
 enum Shape {

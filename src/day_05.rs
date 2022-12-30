@@ -1,5 +1,6 @@
 use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+
+use anyhow::{Error, Result};
 
 #[derive(Debug, PartialEq)]
 pub struct Command {

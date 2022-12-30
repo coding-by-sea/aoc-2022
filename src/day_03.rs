@@ -1,21 +1,20 @@
-use std::str::FromStr;
-use anyhow::{anyhow, Result, Error};
+use anyhow::{anyhow, Result};
 
 #[derive(Debug, PartialEq)]
 struct Bitmask(u64);
 
 impl Bitmask {
     fn new(num: u8)-> Result<Self> {
-        let mut num_shifts;
+        let num_shifts;
         let num_a = u8::try_from('a').unwrap();
         let num_z: u8 = num_a + 25;
-        let num_A = u8::try_from('A').unwrap();
-        let num_Z: u8 = num_A + 25;
+        let num_cap_a = u8::try_from('A').unwrap();
+        let num_cap_z: u8 = num_cap_a + 25;
         if num >= num_a && num <= num_z {
             num_shifts = num - num_a;
         }
-        else if num >= num_A && num <= num_Z {
-            num_shifts = num - num_A + 26;
+        else if num >= num_cap_a && num <= num_cap_z {
+            num_shifts = num - num_cap_a + 26;
         }
         else {
             return Err(anyhow!("{} is out of range", num));

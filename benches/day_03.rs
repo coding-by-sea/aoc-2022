@@ -1,5 +1,6 @@
+use criterion::{black_box, Criterion, criterion_group};
+
 use aoc_2022::{day_03, utils};
-use criterion::{black_box, criterion_group, Criterion};
 
 fn benchmark(c: &mut Criterion) {
     let mut group = c.benchmark_group("day 03: Rucksack Reorganization");

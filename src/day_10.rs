@@ -1,6 +1,6 @@
 use std::str::FromStr;
-use std::collections::HashSet;
-use anyhow::{anyhow, Result, Error};
+
+use anyhow::{anyhow, Error, Result};
 
 #[derive(Debug)]
 pub enum Instruction {
@@ -30,13 +30,12 @@ pub fn parsing(lines: &Vec<String>) -> Vec<Instruction> {
 
 pub fn part_1(instructions: & Vec<Instruction>) -> i32 {
     let mut cycle = 0;
-    let mut prev_cycle = 0;
     let mut x = 1;
     let targets = [20, 60, 100, 140, 180, 220];
     let mut sum_signals = 0;
     for instruction in instructions {
         let mut change = 0;
-        prev_cycle = cycle;
+        let prev_cycle = cycle;
         match instruction {
             Instruction::Noop => {
                 cycle += 1
